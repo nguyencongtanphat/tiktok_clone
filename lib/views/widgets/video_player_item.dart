@@ -13,6 +13,7 @@ class _VideoPlayerItemState extends State<VideoPlayerItem> {
       VideoPlayerController.network(widget.videoUrl)
         ..initialize().then((value) {
           videoPlayerController.play();
+
           videoPlayerController.setVolume(1);
         });
 
@@ -22,7 +23,6 @@ class _VideoPlayerItemState extends State<VideoPlayerItem> {
       videoPlayerController = VideoPlayerController.network(widget.videoUrl)
         ..initialize().then((value) {
           videoPlayerController.play();
-          videoPlayerController.setVolume(1);
         });
     }
 

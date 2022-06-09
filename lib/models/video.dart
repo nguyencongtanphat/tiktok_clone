@@ -28,7 +28,7 @@ class Video {
   });
 
   Map<String, dynamic> toJson() => {
-        "user": userName,
+        "userName": userName,
         "uid": uid,
         "id": id,
         "likes": likes,
@@ -43,7 +43,8 @@ class Video {
 
   static Video fromSnap(DocumentSnapshot snap) {
     var snapShot = snap.data() as Map<String, dynamic>;
-    return Video(
+    print('snapShot:${snapShot}');
+    Video video = Video(
       userName: snapShot['userName'],
       uid: snapShot['uid'],
       id: snapShot['id'],
@@ -56,5 +57,7 @@ class Video {
       videoUrl: snapShot['videoUrl'],
       thumbnail: snapShot['thumbnail'],
     );
+    print('video${video}');
+    return video;
   }
 }
